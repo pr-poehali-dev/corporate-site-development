@@ -1,20 +1,18 @@
 import { useState } from 'react';
-import { Calendar } from '@/components/ui/calendar';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
   const [activeSection, setActiveSection] = useState('home');
+  const [activeTab, setActiveTab] = useState('mission');
 
   const events = [
-    { id: 1, date: '2025-12-10', time: '10:00', title: 'Общее собрание', department: 'Все отделы' },
-    { id: 2, date: '2025-12-11', time: '14:00', title: 'Планерка IT-отдела', department: 'IT' },
-    { id: 3, date: '2025-12-12', time: '11:00', title: 'Совещание по проекту', department: 'Разработка' },
-    { id: 4, date: '2025-12-15', time: '09:00', title: 'Встреча с клиентом', department: 'Продажи' },
+    { id: 1, date: '10.12.2025', time: '10:00', title: 'Общее собрание', department: 'Все отделы' },
+    { id: 2, date: '11.12.2025', time: '14:00', title: 'Планерка IT-отдела', department: 'IT' },
+    { id: 3, date: '12.12.2025', time: '11:00', title: 'Совещание по проекту', department: 'Разработка' },
+    { id: 4, date: '15.12.2025', time: '09:00', title: 'Встреча с клиентом', department: 'Продажи' },
   ];
 
   const departments = [
@@ -106,10 +104,29 @@ const Index = () => {
                   <Icon name="Calendar" className="h-5 w-5 text-primary" />
                   Календарь событий
                 </CardTitle>
-                <CardDescription>Выберите дату для просмотра событий</CardDescription>
+                <CardDescription>Декабрь 2025</CardDescription>
               </CardHeader>
-              <CardContent className="flex justify-center">
-                <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />
+              <CardContent>
+                <div className="rounded-lg border p-4">
+                  <div className="mb-4 text-center font-semibold text-primary">Декабрь 2025</div>
+                  <div className="grid grid-cols-7 gap-2 text-center text-sm">
+                    {['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'].map((day) => (
+                      <div key={day} className="font-medium text-muted-foreground">
+                        {day}
+                      </div>
+                    ))}
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21].map((day) => (
+                      <div
+                        key={day}
+                        className={`rounded-md p-2 ${
+                          day === 8 ? 'bg-primary text-white' : 'hover:bg-secondary'
+                        } ${[10, 11, 12, 15].includes(day) ? 'font-bold text-accent' : ''}`}
+                      >
+                        {day}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
@@ -149,35 +166,65 @@ const Index = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Tabs defaultValue="mission" className="w-full">
-                <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="mission">Миссия</TabsTrigger>
-                  <TabsTrigger value="values">Ценности</TabsTrigger>
-                  <TabsTrigger value="history">История</TabsTrigger>
-                </TabsList>
-                <TabsContent value="mission" className="mt-4 space-y-4">
-                  <p className="text-muted-foreground">
-                    Наша компания стремится предоставлять высококачественные технологические решения, которые
-                    помогают бизнесу расти и развиваться. Мы создаём инновационные продукты, ориентированные на
-                    потребности клиентов.
-                  </p>
-                </TabsContent>
-                <TabsContent value="values" className="mt-4 space-y-4">
-                  <ul className="list-inside list-disc space-y-2 text-muted-foreground">
-                    <li>Профессионализм и ответственность</li>
-                    <li>Инновации и постоянное развитие</li>
-                    <li>Командная работа и взаимопомощь</li>
-                    <li>Ориентация на результат</li>
-                  </ul>
-                </TabsContent>
-                <TabsContent value="history" className="mt-4 space-y-4">
-                  <p className="text-muted-foreground">
-                    Компания основана в 2010 году. За 15 лет работы мы выросли от небольшого стартапа до крупного
-                    предприятия с филиалами в 5 городах России. Сегодня в нашей команде работает более 200
-                    специалистов.
-                  </p>
-                </TabsContent>
-              </Tabs>
+              <div className="space-y-4">
+                <div className="flex gap-2 border-b">
+                  <button
+                    onClick={() => setActiveTab('mission')}
+                    className={`px-4 py-2 font-medium ${
+                      activeTab === 'mission'
+                        ? 'border-b-2 border-primary text-primary'
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    Миссия
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('values')}
+                    className={`px-4 py-2 font-medium ${
+                      activeTab === 'values'
+                        ? 'border-b-2 border-primary text-primary'
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    Ценности
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('history')}
+                    className={`px-4 py-2 font-medium ${
+                      activeTab === 'history'
+                        ? 'border-b-2 border-primary text-primary'
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    История
+                  </button>
+                </div>
+
+                <div className="pt-4">
+                  {activeTab === 'mission' && (
+                    <p className="text-muted-foreground">
+                      Наша компания стремится предоставлять высококачественные технологические решения, которые
+                      помогают бизнесу расти и развиваться. Мы создаём инновационные продукты, ориентированные на
+                      потребности клиентов.
+                    </p>
+                  )}
+                  {activeTab === 'values' && (
+                    <ul className="list-inside list-disc space-y-2 text-muted-foreground">
+                      <li>Профессионализм и ответственность</li>
+                      <li>Инновации и постоянное развитие</li>
+                      <li>Командная работа и взаимопомощь</li>
+                      <li>Ориентация на результат</li>
+                    </ul>
+                  )}
+                  {activeTab === 'history' && (
+                    <p className="text-muted-foreground">
+                      Компания основана в 2010 году. За 15 лет работы мы выросли от небольшого стартапа до крупного
+                      предприятия с филиалами в 5 городах России. Сегодня в нашей команде работает более 200
+                      специалистов.
+                    </p>
+                  )}
+                </div>
+              </div>
             </CardContent>
           </Card>
         </section>
