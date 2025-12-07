@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корпоративный портал</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <span class="logo-text">КорпПортал</span>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active" onclick="setActive(event, 'home')">Главная</a>
+                <a href="#about" class="nav-link" onclick="setActive(event, 'about')">О компании</a>
+                <a href="#departments" class="nav-link" onclick="setActive(event, 'departments')">Отделы</a>
+                <a href="#contacts" class="nav-link" onclick="setActive(event, 'contacts')">Контакты</a>
+                <a href="#instructions" class="nav-link" onclick="setActive(event, 'instructions')">Инструкции</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section id="home" class="section">
+            <div class="hero">
+                <h1>Добро пожаловать в корпоративный портал</h1>
+                <p>Централизованная система управления информацией, расписанием и документами компании</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Календарь событий
+                        </h3>
+                        <p class="card-description">Декабрь 2025</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="calendar">
+                            <div class="calendar-header">Декабрь 2025</div>
+                            <div class="calendar-grid">
+                                <div class="calendar-day-name">Пн</div>
+                                <div class="calendar-day-name">Вт</div>
+                                <div class="calendar-day-name">Ср</div>
+                                <div class="calendar-day-name">Чт</div>
+                                <div class="calendar-day-name">Пт</div>
+                                <div class="calendar-day-name">Сб</div>
+                                <div class="calendar-day-name">Вс</div>
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day">4</div>
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day current">8</div>
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day event">10</div>
+                                <div class="calendar-day event">11</div>
+                                <div class="calendar-day event">12</div>
+                                <div class="calendar-day">13</div>
+                                <div class="calendar-day">14</div>
+                                <div class="calendar-day event">15</div>
+                                <div class="calendar-day">16</div>
+                                <div class="calendar-day">17</div>
+                                <div class="calendar-day">18</div>
+                                <div class="calendar-day">19</div>
+                                <div class="calendar-day">20</div>
+                                <div class="calendar-day">21</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Ближайшие встречи
+                        </h3>
+                        <p class="card-description">Расписание на ближайшие дни</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div>
+                                    <p class="event-title">Общее собрание</p>
+                                    <p class="event-time">10.12.2025 в 10:00</p>
+                                </div>
+                                <span class="badge">Все отделы</span>
+                            </div>
+                            <div class="event-item">
+                                <div>
+                                    <p class="event-title">Планерка IT-отдела</p>
+                                    <p class="event-time">11.12.2025 в 14:00</p>
+                                </div>
+                                <span class="badge">IT</span>
+                            </div>
+                            <div class="event-item">
+                                <div>
+                                    <p class="event-title">Совещание по проекту</p>
+                                    <p class="event-time">12.12.2025 в 11:00</p>
+                                </div>
+                                <span class="badge">Разработка</span>
+                            </div>
+                            <div class="event-item">
+                                <div>
+                                    <p class="event-title">Встреча с клиентом</p>
+                                    <p class="event-time">15.12.2025 в 09:00</p>
+                                </div>
+                                <span class="badge">Продажи</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        О компании
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="tabs">
+                        <div class="tabs-header">
+                            <button class="tab-button active" onclick="switchTab(event, 'mission')">Миссия</button>
+                            <button class="tab-button" onclick="switchTab(event, 'values')">Ценности</button>
+                            <button class="tab-button" onclick="switchTab(event, 'history')">История</button>
+                        </div>
+                        <div class="tabs-content">
+                            <div id="mission" class="tab-content active">
+                                <p>Наша компания стремится предоставлять высококачественные технологические решения, которые помогают бизнесу расти и развиваться. Мы создаём инновационные продукты, ориентированные на потребности клиентов.</p>
+                            </div>
+                            <div id="values" class="tab-content">
+                                <ul>
+                                    <li>Профессионализм и ответственность</li>
+                                    <li>Инновации и постоянное развитие</li>
+                                    <li>Командная работа и взаимопомощь</li>
+                                    <li>Ориентация на результат</li>
+                                </ul>
+                            </div>
+                            <div id="history" class="tab-content">
+                                <p>Компания основана в 2010 году. За 15 лет работы мы выросли от небольшого стартапа до крупного предприятия с филиалами в 5 городах России. Сегодня в нашей команде работает более 200 специалистов.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="departments" class="section">
+            <h2 class="section-title">Структура отделов</h2>
+            <div class="grid-2">
+                <div class="card hoverable">
+                    <div class="card-header">
+                        <h3>
+                            <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            Отдел разработки
+                        </h3>
+                        <p class="card-description">Руководитель: Иванов И.И.</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="dept-info">
+                            <span>Количество сотрудников</span>
+                            <span class="badge-outline">12 чел.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hoverable">
+                    <div class="card-header">
+                        <h3>
+                            <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                            Отдел продаж
+                        </h3>
+                        <p class="card-description">Руководитель: Петрова А.С.</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="dept-info">
+                            <span>Количество сотрудников</span>
+                            <span class="badge-outline">8 чел.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hoverable">
+                    <div class="card-header">
+                        <h3>
+                            <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg>
+                            IT-отдел
+                        </h3>
+                        <p class="card-description">Руководитель: Сидоров П.К.</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="dept-info">
+                            <span>Количество сотрудников</span>
+                            <span class="badge-outline">6 чел.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hoverable">
+                    <div class="card-header">
+                        <h3>
+                            <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                <line x1="8" y1="6" x2="16" y2="6"></line>
+                                <line x1="8" y1="10" x2="16" y2="10"></line>
+                                <line x1="8" y1="14" x2="16" y2="14"></line>
+                                <line x1="8" y1="18" x2="12" y2="18"></line>
+                            </svg>
+                            Бухгалтерия
+                        </h3>
+                        <p class="card-description">Руководитель: Смирнова О.В.</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="dept-info">
+                            <span>Количество сотрудников</span>
+                            <span class="badge-outline">4 чел.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Контактная информация
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="grid-2">
+                        <div>
+                            <h4>Главный офис</h4>
+                            <div class="contact-info">
+                                <p>📍 г. Москва, ул. Тверская, д. 10</p>
+                                <p>📞 +7 (495) 123-45-67</p>
+                                <p>✉️ info@company.ru</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Режим работы</h4>
+                            <div class="contact-info">
+                                <p>Понедельник - Пятница: 9:00 - 18:00</p>
+                                <p>Суббота - Воскресенье: выходной</p>
+                            </div>
+                            <button class="btn">💬 Написать в поддержку</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instructions" class="section">
+            <h2 class="section-title">База знаний и инструкции</h2>
+            <div class="card">
+                <div class="card-content">
+                    <div class="instructions-list">
+                        <div class="instruction-item">
+                            <div class="instruction-left">
+                                <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>Инструкция по работе с CRM</span>
+                            </div>
+                            <div class="instruction-right">
+                                <span class="badge-outline">Продажи</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-left">
+                                <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>Правила безопасности</span>
+                            </div>
+                            <div class="instruction-right">
+                                <span class="badge-outline">Общее</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-left">
+                                <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>Работа с корпоративной почтой</span>
+                            </div>
+                            <div class="instruction-right">
+                                <span class="badge-outline">IT</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-left">
+                                <svg class="icon-small" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>Оформление командировок</span>
+                            </div>
+                            <div class="instruction-right">
+                                <span class="badge-outline">Кадры</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2025 Корпоративный портал. Все права защищены.</p>
+            <p>Внутренняя информационная система организации</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
